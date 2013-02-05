@@ -1,0 +1,26 @@
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.slide a img {
+	margin: 0 50px;
+}
+
+.clear {
+	clear: both;
+}
+
+.deck-container,
+.deck-container .slide {
+  background: #46483e;
+  color: #fafafa;
+  font: Verdana, Arial, sans-serif;
+}
+
+b {
+	text-decoration: underline;
+}

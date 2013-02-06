@@ -21,6 +21,14 @@
   font: Verdana, Arial, sans-serif;
 }
 
-b {
-	text-decoration: underline;
+.deck-container .slide h1,
+.deck-container .slide h2,
+.deck-container .slide h3, 
+.deck-container .slide b {
+	text-shadow: none;
+}
+
+.deck-container .slide h2, 
+.deck-container .slide b {
+	color: #90c740;
 }

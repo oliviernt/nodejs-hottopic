@@ -50,24 +50,91 @@
 </section>
 
 <section class="slide" id="misc">
-	<h2>Daten</h2>
+	<h2>Kurzübersicht</h2>
+	<p>Wer: Ryan Dahl | <a href="http://joyent.com">Joyent</a></p>
+	<p>Was: Google V8 in C++</p>
 	<p>Wann: Ende 2009</p>
-	<p>Wer: Ryan Lienhart Dahl</p>
+	<p>Current Version: v0.8.19</p>
+	<p>Vergleichbar mit:</p>
+	<ul>
+		<li>EventMachine (Ruby)</li>
+		<li>libevent (C)</li>
+		<li>Perl Object Environment (Perl)</li>
+		<li>Twisted (Python)</li>
+		<li>Vert.x (Java)</li>
+	</ul>
 </section>
 
 <section class="slide" id="dis-advantages">
 	<h2>Vorteile</h2>
 	<ul>
 		<li><a href="http://code.google.com/p/v8/">Google V8 JavaScript Engine</a></li>
+		<li>Non-blocking I/O</li>
 		<li>Ereignisgesteuert mit Callback-Funktionen</li>
-		<li>Keine feste Speicher-Zuweisung/-Nutzung</li>
-		<li>NPM (Node Packaged Modules) Paketmanager (> 20 000 Pakete)</li>
-		<li>Niedrige Einstiegshürde für Entwickler da JavaScript</li>
+		<li>Speichernutznug nur bei Ausführung</li>
+		<li>npm Paketmanager (> 20 000 Pakete)</li>
+		<li>Niedrige Einstiegshürde für (Font-End-)Entwickler da JavaScript</li>
 		<li>Große Community</li>
 	</ul>
 	<h2>Nachteile</h2>
 	<ul>
-		<li>Noch sehr jung und somit wenig Erfahrung</li>
+		<li>Wenig Erfahrungswerte</li>
+		<li>Nicht Java (neues Tier im bsmo-Zoo)</li>
+	</ul>
+</section>
+
+<section class="slide" id="howto-start">
+	<h2>HTTP Server implementieren</h2>
+	<p>Einen Server selber schreiben? Ist das nicht kompliziert?</p>
+	<p>Mit node.js, nicht wirklich!</p>
+</section>
+
+<section class="slide" id="howto-server-implementation">
+	<h2>app.js</h2>
+	<p>Einfache App mit Server:</p>
+	<p>
+		<code>
+			<pre>
+<b>var http = require('http');</b>
+var serverCallback = function (request, response) {
+  response.writeHead(200, {
+    'Content-Type': 'text/plain'
+  });
+  response.end('Hello World!');
+};
+<b>var server = http.createServer(serverCallback);</b>
+<b>server.listen(1337, '127.0.0.1');</b>
+console.log('Server running at http://127.0.0.1:1337/');
+			</pre>
+		</code>
+	</p>
+</section>
+
+<section class="slide" id="howto-details">
+	<h2>Was genau passiert da?</h2>
+	<ol>
+		<li><code>var http = require("http"); //Lädt das basis Modul "http"</code></li>
+		<li><code>var server = http.createServer(serverCallback); //Erstellt den server</code></li>
+		<li><code>server.listen(1337, '127.0.0.1'); //Setzt den Port und lauscht</code></li>
+	</ol>
+</section>
+
+<section class="slide" id="npm">
+	<h2>npm: der Paketmanager für Node</h2>
+	<p><a href="https://npmjs.org/doc/faq.html#If-npm-is-an-acronym-why-is-it-never-capitalized">npm is not an acronym </a></p>
+	<p>Über 20k Pakete (Module) wie z.B.: underscore, express, ...</p>
+	<p><a href="https://npmjs.org/">npmjs.org</a></p>
+	<p>package.json (<a href="http://package.json.nodejitsu.com/#">package.json.nodejitsu.com</a>)</p>
+</section>
+
+<section class="slide" id="links">
+	<h2>Linksammlung</h2>
+	<ul>
+		<li><a href="http://nodejs.org/">nodejs.org</a> - offizielle node.js Webseite</li>
+		<li><a href="http://npmjs.org/">npmjs.org</a> - offizielle npm Webseite</li>
+		<li><a href="http://nodeguide.com/">nodeguide.com</a> - node.js Leitfaden von Felix Geisendörfer</li>
+		<li><a href="http://coding.smashingmagazine.com/2011/09/16/useful-node-js-tools-tutorials-and-resources/">Useful Node.js Tools, Tutorials And Resources</a> - auf Smashing Magazine</li>
+		<li><a href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">How do I get started with node.js</a> - Linksammlung auf stackoverflow.com</li>
 	</ul>
 </section>
 

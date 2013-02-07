@@ -1,0 +1,8 @@
+{
+    "name" : "hottopic-example-app",
+    "author" : "Olivier Tille <olivier.tille@springer.com>",
+    "description" : "An example app for the Springer Medizin bsmo GmbH Hot Topic",
+    "version" : "0.0.1",
+    "dependencies" : {
+    }
+}
